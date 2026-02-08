@@ -28,7 +28,7 @@ I will ask my friend to do these things on website:
  
 ## I will check out process, how they will do it, and where go.
  **Then I will ask these questions:**
-    - Do you find something unlogical?
-    - What you liked/disliked?
-    - What do you think is too complicated?
-    - Overall opinion?
+- Do you find something unlogical?
+- What you liked/disliked?
+- What do you think is too complicated?
+- Overall opinion?
