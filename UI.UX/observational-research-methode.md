@@ -18,12 +18,15 @@ I will ask my friend to do these things on website:
     - good
  - login: okay
 
- - create team: picture is too large for backend, 
- - join team: works fine
- - edit team: not possiable to edit team
- 
- I will check out process, how they will do it, and where go.
+ - create team:
+    - picture is too large for backend, 
+ - join team:
+    - works fine
+ - edit team:
+    - not possiable to edit team
 
+ 
+## I will check out process, how they will do it, and where go.
  **Then I will ask these questions:**
     - Do you find something unlogical?
     - What you liked/disliked?
