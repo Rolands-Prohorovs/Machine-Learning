@@ -1,4 +1,4 @@
-0) ## Imports
+## 0) Imports
 
 ```python
     import tensorflow as tf
@@ -13,7 +13,7 @@
 - Matplotlib: plots, images, training curves
 - Sklearn: datasets and spliting to train/test
 
-1) ## Load dataset
+## 1. Load dataset
 **Goal:** get (X, y) for training and testing
 
 ### Example A: Fashion-MNIST - multiclass images
@@ -35,7 +35,7 @@ by many keras loss functions and metrics it is required to have labes stored in 
     X, y = make_circles(n_samples=1000, noise=0.03, random_state=42)
 ```
 
-2) ## Explore/ check shapes 
+## 2. Explore/ check shapes 
 ```python
     print(x_train.shape, y_train.shape)
     print(x_train.dtype, x_train.min(), x_train.max())
@@ -46,7 +46,7 @@ by many keras loss functions and metrics it is required to have labes stored in 
 - dtype often uint8, range 0..255
 
 
-3) ## Mormalize/preprocess data
+## 3. Mormalize/preprocess data
 **Goal:** make training stable and faster 
 
 ### Images: scale pixels to [0, 1]
@@ -62,7 +62,7 @@ Fashino-MNIST is (28, 28), CNN expects (28, 28, 1):
     x_test = x_test[..., np.newaxis]
 ```
 
-4) ## Split data (train/validation/test)
+## 4. Split data (train/validation/test)
 **Goal:** train, track overfitting, and evaluate honestly
 
 ### Option A (Keras): use validation_split
@@ -78,7 +78,7 @@ Fashino-MNIST is (28, 28), CNN expects (28, 28, 1):
 - validation: tune/ detect overfitting
 - test: finale evaluation 
 
-5) ## Create the model (architecture depends on task)
+## 5. Create the model (architecture depends on task)
 
 ### A: Binary classification (circles) - Dense network
 ```python
