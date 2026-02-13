@@ -1,4 +1,4 @@
-0) Imports
+0) ## Imports
 
 ```python
     import tensorflow as tf
@@ -13,15 +13,15 @@
 - Matplotlib: plots, images, training curves
 - Sklearn: datasets and spliting to train/test
 
-1) Load dataset
-Goal: get (X, y) for training and testing
+1) ## Load dataset
+**Goal:** get (X, y) for training and testing
 
-Example A: Fashion-MNIST - multiclass images
+### Example A: Fashion-MNIST - multiclass images
 ```python
     (X_train, y_train), (X_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
 ```
 
-Example B: CIFAR-10 - color images
+### Example B: CIFAR-10 - color images
 ```python
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
     y_train = y_train.flatten()
@@ -30,47 +30,47 @@ Example B: CIFAR-10 - color images
 **Note**
 by many keras loss functions and metrics it is required to have labes stored in shape (N,). So using .flatten() function we convert from (N, 1) to (N, ).
 
-Example C: Circles - bianry, non-linear
+### Example C: Circles - bianry, non-linear
 ```python
     X, y = make_circles(n_samples=1000, noise=0.03, random_state=42)
 ```
 
-2) Explore/ check shapes 
+2) ## Explore/ check shapes 
 ```python
     print(x_train.shape, y_train.shape)
     print(x_train.dtype, x_train.min(), x_train.max())
 ```
-For Fashion-MNIST you expect:
+**For Fashion-MNIST you expect:**
 - x_train: (60000, 28, 28)
 - y_train: (60000,)
 - dtype often uint8, range 0..255
 
 
-3) Mormalize/preprocess data
-Goal: make training stable and faster 
+3) ## Mormalize/preprocess data
+**Goal:** make training stable and faster 
 
-Images: scale pixels to [0, 1]
+### Images: scale pixels to [0, 1]
 ```python
     x_train = x_train.astype("float32") / 255.0
     x_test = x_test.astype("float32") / 255.0
 ```
 
-CNN: needs channel dimension
+### CNN: needs channel dimension
 Fashino-MNIST is (28, 28), CNN expects (28, 28, 1):
 ```python
     x_train = x_train[..., np.newaxis]
     x_test = x_test[..., np.newaxis]
 ```
 
-4) Split data (train/validation/test)
-Goal: train, track overfitting, and evaluate honestly
+4) ## Split data (train/validation/test)
+**Goal:** train, track overfitting, and evaluate honestly
 
-Option A (Keras): use validation_split
+### Option A (Keras): use validation_split
 ```python
     history = model.fit(x_train, y_train, epoch=10, validation_split=0.1)
 ```
 
-Option B (sklearn): train_test_split
+### Option B (sklearn): train_test_split
 ```python
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 ```
@@ -78,9 +78,9 @@ Option B (sklearn): train_test_split
 - validation: tune/ detect overfitting
 - test: finale evaluation 
 
-5) Create the model (architecture depends on task)
+5) ## Create the model (architecture depends on task)
 
-A: Binary classification (circles) - Dense network
+### A: Binary classification (circles) - Dense network
 ```python
     model= tf.keras.Sequential([
         tf.keras.layer.Input(shape=(2,)),
@@ -92,7 +92,7 @@ A: Binary classification (circles) - Dense network
 - output: `sigmoid`
 - units: `1`
 
-B: Multiclass classification (Fashion-MNIST) - Dense baseline
+### B: Multiclass classification (Fashion-MNIST) - Dense baseline
 ```python
     model = tf.keras.Sequential([
         tf.keral.layer.Input(shape(28, 28)),
@@ -105,7 +105,7 @@ B: Multiclass classification (Fashion-MNIST) - Dense baseline
 - units: `#classes` (10)
 
 
-C: CNN for images (Fashion-MNIST)
+### C: CNN for images (Fashion-MNIST)
 ```python
     model = tf.keras.Sequential([
         tf.keral.layer.Input(shape=(28,28,1)),
@@ -119,11 +119,11 @@ C: CNN for images (Fashion-MNIST)
         tf.keras.layer.Dense(10, activation="softmax")
     ])
 ```
-CNN
+**CNN**
 - keeps spatial info
 - learns edges - shapes - objects
 
-D: Transfer learning (feature extraction) -- pretrained base + new head
+### D: Transfer learning (feature extraction) -- pretrained base + new head
 ```python
     IMG_SIZE = 96
 
