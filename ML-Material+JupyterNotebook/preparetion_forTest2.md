@@ -148,3 +148,106 @@ Fashino-MNIST is (28, 28), CNN expects (28, 28, 1):
     ])
 ```
 - freeze base, train only head
+
+
+## 6. Compile (loss + optimazer + metrics)
+**Goal:** tell TF how to learn
+**Loss function**(must match output + lables)
+
+### Binary classification
+- output: `softmax`
+- loss: `sparce_categorical_crossentory
+```python
+    loss="sparce_categorical_crossentory"
+```
+
+### Multiclass (one-hot labels)
+- output: `softmax`
+- loss: `categorical_crossentropy`
+```python
+    loss="categorical_crossentropy"
+```
+
+### Optimazer
+**Adam**(default best for most tasks)
+```python
+    optimazer="adam"
+```
+With learning rate:
+```python
+    optimazer=tf.keras.optimazer.Adam(learning_rate=1e-3)
+```
+
+**SGD**(classic,soemtimes used in exersises)
+```python
+    optimazer=tf.keras.optimazer.SGD(learning_rate=0.01)
+```
+
+**Metrics**
+- calssification: `accuracy`
+- regresion: `mae`, `mse`
+
+### Full compile examples:
+**Binary**
+```python
+    model.compile(optimizer="adam", loss="bianry_crossentropy", metrics=["accurasy"])
+```
+
+**Multiclass**
+```python
+    model.compile(optimazer="adam", loss="sparse_categorical_crossentropy", metrics=["accurase"])
+```
+
+## 7. Train(Fit)
+**Goal:** run learning
+```python
+    history= model.fit(
+        x_train, y_train,
+        eposch=10,
+        batch_size=64,
+        validation_split=0.1,
+        verbose=1
+    )
+```
+- `epochs`: more training
+- `batch_size`: speed vs memory
+- `validation_split`: track generalization
+
+## 8. Evaluate on test set
+**Goal:** honest finale score
+```python
+    loss, acc = model.evaluate(x_test, y_test, verbose=0)
+    print("test accurasy:", acc)
+```
+
+## 9. Predict and interpret outputs
+
+### Binary: probability -> class by threshold
+```python
+        probs = model.predict(x_test[:5])
+        preds = (probs > 0.5).astype(int)
+```
+
+### Multiclass: softmax -> argmax
+```python
+    probs = model.predict(x_test[:8])
+    preds = model.argmax(axis=1)
+```
+
+## 10. Visualize result
+
+### Plot training curves
+```python
+    plt.plot(history.history["accuracy"], lable="training acc")
+    plt.plot(history.history["val_accuracy"], label="vall acc")
+    plt.legend(); plt.show()
+```
+
+
+### Show predicted images(Fashion-MNIST)
+```python
+    plt.plot(x_test[0], cmap="gray")
+    plt.plot(f"Pred: {preds[0]}")
+    plt.axis("off")
+    plt.show()
+```
