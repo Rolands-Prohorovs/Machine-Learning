@@ -4,7 +4,7 @@ It contains:</br>
 - **Material for learning ML** 
 - **ML tests and it's reviews** 
 - **Self-study of ML** 
-- **Certificate of Supercomputing course** 
+- **Certificate of Supercomputing course** - **[`Elements of Supercomputing course certificate/`](./MACHINE-LEARNING/Elements%20of%20Supercomputing%20course%20certificate)** 
 - **learning diary of linux commands** 
 - **ML project for predicting Finnish population** 
 - **UI/UX methodes**
