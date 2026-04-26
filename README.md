@@ -15,4 +15,4 @@ It contains:</br>
 )**
 - **[`Optimazer VS accuracy task`](https://github.com/Rolands-Prohorovs/Machine-Learning/tree/main/optimazer_vs_accuracy_function
 )**
--[`Net score task`](https://github.com/Rolands-Prohorovs/Machine-Learning/tree/main/test16.03_prepare%2Bnetscore_task/task_netscore)
+- **[`Net score task`](https://github.com/Rolands-Prohorovs/Machine-Learning/tree/main/test16.03_prepare%2Bnetscore_task/task_netscore)**
