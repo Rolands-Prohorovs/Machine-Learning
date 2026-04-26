@@ -4,7 +4,7 @@ It contains:</br>
 - **Material for learning ML** 
 - **ML tests and it's reviews** 
 - **Self-study of ML** 
-- **Certificate of Supercomputing course** - **[`Elements of Supercomputing course certificate/`]([./MACHINE-LEARNING/Elements%20of%20Supercomputing%20course%20certificate](https://github.com/Rolands-Prohorovs/Machine-Learning/blob/main/Elements%20of%20Supercomputing%20course%20certificate/Rolands%20Prohorovs-%20KAMK%20Certificate%20-%20EoSC%202026.pdf))** 
+- **[`Certificate of Supercomputing course`](https://github.com/Rolands-Prohorovs/Machine-Learning/blob/main/Elements%20of%20Supercomputing%20course%20certificate/Rolands%20Prohorovs-%20KAMK%20Certificate%20-%20EoSC%202026.pdf)** 
 - **learning diary of linux commands** 
 - **ML project for predicting Finnish population** 
 - **UI/UX methodes**
