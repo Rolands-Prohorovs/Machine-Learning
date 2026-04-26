@@ -7,7 +7,8 @@ It contains:</br>
 - **Certificate of Supercomputing course** 
 - **learning diary of linux commands** 
 - **ML project for predicting Finnish population** 
-- **UI/UX methodes** 
+- **UI/UX methodes**
+- **other tasks for this course**
 
 
 ## Folder Structure & Contents
