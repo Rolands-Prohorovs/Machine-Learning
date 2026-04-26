@@ -7,17 +7,15 @@ It contains:</br>
 - **Certificate of Supercomputing course** 
 - **learning diary of linux commands** 
 - **ML project for predicting Finnish population** 
-- **UI/UX methodes ** 
+- **UI/UX methodes** 
 
 
-## 📁 Folder Structure & Contents
-
-### `MACHINE-LEARNING/` (root)
-- **`.venv/`** – Virtual environment for Python dependencies (not tracked by Git).
+## Folder Structure & Contents
+- **`.venv/`** – Virtual environment for Python dependencies
 - **`Elements of Supercomputing course certificate/`**  
-  - `Rolands Prohorovs - KAMK Certificate - EoSCC 2026.pdf` – Certificate for the Elements of Supercomputing course.
+  - `Rolands Prohorovs - KAMK Certificate - EoSCC 2026.pdf` – Certificate for the Elements of Supercomputing course
 - **`linux_commands/`**  
-  - `learning_diary.md` – Diary / notes about Linux commands learned.
+  - `learning_diary.md` – Diary / notes about Linux commands learned
 - **`ML-Material+JupyterNotebook/`**  
   - `ML_Material/` – General machine learning resources / notes.  
   - `Preparation_forTest/` – Materials for test preparation.
